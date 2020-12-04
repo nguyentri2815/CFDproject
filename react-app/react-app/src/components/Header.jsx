@@ -1,4 +1,11 @@
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function Header() {
+  function togleMenu(e) {
+    e.preventDefault();
+    let elementNav = document.querySelector(".nav");
+    elementNav.classList.toggle("active");
+  }
+
   return (
     <>
       <div className="preloader loaded" id="preloader">
@@ -7,7 +14,12 @@ export default function Header() {
       {/*start header*/}
       <div className="header">
         <div className="header__bar">
-          <a className="show-content" href="true" data-show="nav">
+          <a
+            className="show-content"
+            href="adsa"
+            data-show="nav"
+            onClick={togleMenu}
+          >
             <img src="./images/home/iconbar.svg" alt="" />
             <span>MENU</span>
           </a>
@@ -20,14 +32,14 @@ export default function Header() {
         <div className="header__login">
           <a
             className="header__btn header__btn-login show-content"
-            href
+            href="fsdf"
             data-show="login"
           >
             đăng nhập
           </a>
           <a
             className="header__btn header__btn-signup show-content"
-            href
+            href="fsdf"
             data-show="login"
           >
             đăng ký
@@ -36,28 +48,36 @@ export default function Header() {
       </div>
       <ul className="nav modal" id="nav">
         <li>
-          <a className="nav-btn btn-login show-content" href data-show="login">
+          <a
+            className="nav-btn btn-login show-content"
+            href="dfd"
+            data-show="login"
+          >
             đăng nhập
           </a>
-          <a className="nav-btn btn-signup show-content" href data-show="login">
+          <a
+            className="nav-btn btn-signup show-content"
+            href="gfdg"
+            data-show="login"
+          >
             đăng ký
           </a>
         </li>
         <li>
-          <a href>trang chủ</a>
+          <Link to="/">trang chủ</Link>
         </li>
         <li>
-          <a href>cfd team</a>
+          <Link to="/hoc-vien">profile</Link>
         </li>
         <li>
-          <a href>khóa học</a>
+          <Link to="/dang-ky">đăng ký</Link>
         </li>
         <li>
-          <a href>dự án</a>
+          <Link to="/lien-he">liên hệ</Link>
         </li>
-        <li>
-          <a href>liên hệ</a>
-        </li>
+        {/* <li>
+          <Link to="/">liên hệ</Link>
+        </li> */}
       </ul>
       <div className="modal" id="login">
         <form className="modal-form">
@@ -88,11 +108,11 @@ export default function Header() {
               </div>
               <span className="mess-error" />
             </div>
-            <a className="form-btn form-btn-login" href>
+            <a className="form-btn form-btn-login" href="fdfds">
               ĐĂNG NHẬP
             </a>
             <h4>hoặc đăng nhập bằng</h4>
-            <a className="form-btn form-btn-google" href>
+            <a className="form-btn form-btn-google" href="gsgf">
               <img src="./images/home/google-symbol 1.svg" alt="" />
               Google
             </a>

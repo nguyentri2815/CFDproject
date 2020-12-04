@@ -1,4 +1,6 @@
-export default function CourseCard({title,desc,img}) {
+import { Link, Route } from "react-router-dom";
+
+export default function CourseCard({title,desc,img,id="16"}) {
   return (
     <>
       <div className="box-thumb">
@@ -36,7 +38,8 @@ export default function CourseCard({title,desc,img}) {
             <h4>Trần Nghĩa</h4>
           </div>
           <div className="author-btn">
-            <a href>Đăng ký</a>
+            <Link to={`/dang-ky/${id}`}> Đăng ký</Link>
+            {/* <a href></a> */}
           </div>
         </div>
       </div>

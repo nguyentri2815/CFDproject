@@ -11,9 +11,9 @@ import Team from "./components/Team";
 export default function Home() {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" style={{textAlign:"left"}}>
         {/*start header*/}
-        <Header></Header>
+        {/* <Header></Header> */}
         {/*end header*/}
         {/*start banner-top*/}
         <Banner></Banner>
@@ -32,7 +32,7 @@ export default function Home() {
         <Registration></Registration>
         {/*end home-registration*/}
         {/*start footer*/}
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         {/*end footer*/}
       </div>
     </>

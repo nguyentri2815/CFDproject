@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-
-export default function Register() {
+import './style.scss';
+export default function Demo() {
     let [form, setForm] = useState({
         name:'',
         phone:'',
@@ -48,6 +48,7 @@ export default function Register() {
     <>
       <div className="wrapper">
         {/* <Header></Header> */}
+        <h1 className="demo">trang demo</h1>
         <div className="RegisterCourse">
           <div className="container">
             <div className="row">

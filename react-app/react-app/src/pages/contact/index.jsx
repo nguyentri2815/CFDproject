@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <>
       <div className="wrapper">
-        <Header></Header>
+        {/* <Header></Header> */}
         <div className="contact">
           <div className="container">
             <div className="row">
@@ -135,7 +135,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
     </>
   );
