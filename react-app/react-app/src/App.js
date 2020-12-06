@@ -12,40 +12,43 @@ import Demo from "./pages/demo";
 import LoginUser from "./pages/loginuser";
 import RegisterUser from "./pages/registeruser";
 import FogetPass from "./pages/forgetpass";
+import AuthProvider from "./hooks/useAuth";
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header/>
-        <Switch>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
             <Route path="/hoc-vien">
-              <Profile/>  
+              <Profile />
             </Route>
             <Route path="/dang-ky">
-              <Register/> 
+              <Register />
             </Route>
             <Route path="/lien-he">
-              <Contact/> 
+              <Contact />
             </Route>
             <Route path="/demo">
-              <Demo/>
+              <Demo />
             </Route>
             <Route path="/login">
-                <LoginUser/>
+              <LoginUser />
             </Route>
             <Route path="/register">
-                <RegisterUser/>
+              <RegisterUser />
             </Route>
             <Route path="/fogetpass">
-                <FogetPass/>
+              <FogetPass />
             </Route>
             <Route path="/">
               <Home />
             </Route>
-        </Switch>
-        <Footer/>
-      </div>
-    </Router>
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

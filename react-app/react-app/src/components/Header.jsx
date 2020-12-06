@@ -1,10 +1,21 @@
+import { useContext } from "react";
+import { useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { AuthContext } from "../hooks/useAuth";
 export default function Header() {
+  
+  // let {user} = useContext(AuthContext)
+  // // console.log(user);
+
+  let { user} = useAuth();
+  
   function togleMenu(e) {
     e.preventDefault();
     let elementNav = document.querySelector(".nav");
     elementNav.classList.toggle("active");
   }
+
 
   return (
     <>
@@ -30,20 +41,26 @@ export default function Header() {
           </a>
         </h1>
         <div className="header__login">
-          <a
-            className="header__btn header__btn-login show-content"
-            href="fsdf"
-            data-show="login"
-          >
-            đăng nhập
-          </a>
-          <a
-            className="header__btn header__btn-signup show-content"
-            href="fsdf"
-            data-show="login"
-          >
-            đăng ký
-          </a>
+          {user.name ? (
+            <div>{user.name}</div>
+          ) : (
+            <div>
+              <a
+                className="header__btn header__btn-login show-content"
+                href="fsdf"
+                data-show="login"
+              >
+                đăng nhập
+              </a>
+              <a
+                className="header__btn header__btn-signup show-content"
+                href="fsdf"
+                data-show="login"
+              >
+                đăng ký
+              </a>
+            </div>
+          )}
         </div>
       </div>
       <ul className="nav modal" id="nav">
