@@ -21,8 +21,13 @@ export default function useValidataForm(initValua,rule) {
     let {validate, messge} = rule;
     let errorObj ={}
     for (let i in validate) {
+      // console.log(i);
+      // console.log(validate);
+      // let inform = i in form;
+      // console.log(inform);kiem tra xem i ( key ( name: facebok ,phone,fb có trong form ko trả vể true false))
       if(i in form ){
         if(validate[i].required){
+          // console.log(form[i]);
           if(!form[i]){
             errorObj[i]=messge?.[i]?.required || "truong nay bac buoc"
           }

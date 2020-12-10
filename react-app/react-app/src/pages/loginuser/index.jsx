@@ -1,7 +1,13 @@
+import { useAuth } from "../../core/hooks/useAuth";
+import { Redirect } from "react-router-dom";
 export default function LoginUser() {
+  let {user} = useAuth();
+  if (user.name) {
+    return <Redirect to="/"/>
+  }
   return (
     <>
-      <div className="modal" id="login">
+      <div className="modal" id="loginUser">
         <form className="modal-form">
           <div className="form-group">
             <div className="close">+</div>

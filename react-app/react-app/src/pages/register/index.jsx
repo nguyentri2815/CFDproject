@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import useValidataForm from "../../hooks/useValidateForm";
+import useValidataForm from "../../core/hooks/useValidateForm";
 
 // const patternEmail =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 // const patternPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
@@ -91,7 +91,7 @@ export default function Register() {
           required:'phone bac buoc',
           pattern:'phone khong đúng định dạng'
         },
-        email:{
+        facebook:{
           required:'link facebook bac buoc'
         }
         

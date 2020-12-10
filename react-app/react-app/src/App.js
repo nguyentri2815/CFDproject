@@ -1,18 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Home from "./pages/home";
-import Register from "./pages/register";
-import Contact from "./pages/contact";
-import Profile from "./pages/profile";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import PrivateRoute from "./core/components/PrivateRoute";
+import AuthProvider from "./core/hooks/useAuth";
+import Contact from "./pages/contact";
 import Demo from "./pages/demo";
-import LoginUser from "./pages/loginuser";
-import RegisterUser from "./pages/registeruser";
 import FogetPass from "./pages/forgetpass";
-import AuthProvider from "./hooks/useAuth";
+import Home from "./pages/home";
+import LoginUser from "./pages/loginuser";
+import Profile from "./pages/profile";
+import Register from "./pages/register";
+import RegisterUser from "./pages/registeruser";
 function App() {
   return (
     <AuthProvider>
@@ -20,23 +20,25 @@ function App() {
         <div className="App">
           <Header />
           <Switch>
-            <Route path="/hoc-vien">
+            {/* <Route path="/hoc-vien">
               <Profile />
-            </Route>
-            <Route path="/dang-ky">
+            </Route> */}
+            <PrivateRoute path="/hoc-vien" component={Profile}/>
+            {/* <Route path="/dang-ky">
               <Register />
-            </Route>
+            </Route> */}
+            <PrivateRoute path="/dang-ky" component={Register}/>
             <Route path="/lien-he">
               <Contact />
             </Route>
             <Route path="/demo">
               <Demo />
             </Route>
-            <Route path="/login">
+            <Route path="/loginUser">
               <LoginUser />
             </Route>
             <Route path="/register">
-              <RegisterUser />
+              <Register/>
             </Route>
             <Route path="/fogetpass">
               <FogetPass />

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
-import { AuthContext } from "../hooks/useAuth";
+import { useAuth } from "../core/hooks/useAuth";
+import { AuthContext } from "../core/hooks/useAuth";
 export default function Header() {
   
   // let {user} = useContext(AuthContext)
@@ -87,7 +87,7 @@ export default function Header() {
           <Link to="/hoc-vien">profile</Link>
         </li>
         <li>
-          <Link to="/dang-ky">đăng ký</Link>
+          <Link to="/register">đăng ký</Link>
         </li>
         <li>
           <Link to="/lien-he">liên hệ</Link>
